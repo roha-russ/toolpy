@@ -4,13 +4,10 @@ class Option[T]:
         self.__value = value
 
     def is_some(self) -> bool:
-        if self.__value is None:
-            return False
-
-        return True
+        return self.__value is not None
 
     def is_none(self) -> bool:
-        return not self.is_some()
+        return self.__value is None
 
     def unwrap(self) -> T:
         if self.is_none():
